@@ -6,14 +6,11 @@ vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcy
 
 def count_occurences(list)
   occurences = {}
-  
-  list.each do |word|
-    word[element] = array.count(element)
+  array.each do |element|
+    occurences[element] = array.count(element)
   end
 
-  occurences.each do |word, count|
-    puts "#{word} => #{count}"
+  occurences.each do |element, count|
+    puts "#{element} => #{count}"
   end
 end
-
-count_occurences(vehicles)
