@@ -2,4 +2,4 @@ advice = "Few things in life are as important as house training your pet dinosau
 
 p advice.match('Dino')
 
-# also .include?('Dino')
+# should use match, as that accept regex

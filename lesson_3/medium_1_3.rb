@@ -1,3 +1,5 @@
+
+
 def factors(number)
   divisor = number
   factors = []
@@ -7,9 +9,6 @@ def factors(number)
   end
   factors
 end
-
-# This factoring method fails at 0 or negative nums.
-
-p factors(-5)
-p factors(0)
+p factors(-10)
 p factors(10)
+p factors(3)

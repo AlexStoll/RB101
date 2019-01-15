@@ -1,30 +1,26 @@
-=begin
+what is != and where should you use it?
 
-1. what is != and where should you use it?
+# returns true if the arguments (any object) are not equal
 
-A comparitive to check whether something is not equal to.
-Returns a boolean.
+put ! before something, like !user_name
 
-2. put ! before something, like !user_name
+# returns the opposite boolean. !dog = false and !false = true
 
-Will turn the object into the opposite of its boolean equivalent.
+put ! after something, like words.uniq!
 
-3. put ! after something, like words.uniq!
+# calls a different method. ! usually indicates a destructive
+# version of the same method, but there are exceptions in a variety
+# of ways
 
-! on the end of a method indicates it will modify the caller.
-Not all methods have a destructive version, and some destructive
-methods don't have a ! associated, like Array#<<.
+put ? before something
 
-4. put ? before something
+# the ternary if...else operator
 
-? : is the ternary operator for if/else
+put ? after something
 
-5. put ? after something
+# on the end of a method name, should indicate the method
+# will return a boolean
 
-On a method, it indicates that a boolean will be returned.
+put !! before something, like !!user_name
 
-6. put !! before something, like !!user_name
-
-This will turn the object into its boolean equivalent.
-
-=end
+# returns the boolean value of the object via a flip flop.

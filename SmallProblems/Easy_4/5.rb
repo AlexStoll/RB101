@@ -2,12 +2,11 @@
 # then finds sum of all those numbers
 # use range (1..input)
 
+
 def multisum(num)
   result = 0
   for i in (1..num)
-    if i % 3 == 0
-      result += i
-    elsif i % 5 == 0
+    if i % 3 == 0 || i % 5 == 0
       result += i
     end
   end

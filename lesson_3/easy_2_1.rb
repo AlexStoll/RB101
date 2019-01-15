@@ -1,7 +1,14 @@
 ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
 
-# Check if 'Spot is present'
+# see if "Herman" is present in the Hash
 
-p ages.include?('Spot')
+p ages.include?("Herman")
 
-# also Hash#include? or Hash#member?
+p ages.has_key?("Herman")
+p ages.key?("Herman")
+# These two are aliases
+
+p ages.any? {|key, value| key == "Herman"}
+
+
+# Bonus: give two more methods

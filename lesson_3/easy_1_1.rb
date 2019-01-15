@@ -3,5 +3,4 @@ numbers.uniq
 
 puts numbers
 
-# uniq is not going to modify the caller, it will
-# return a different array. Therefor, numbers will remain unchanged.
+# numbers unchanged, rather than Array#uniq! which is destructive
