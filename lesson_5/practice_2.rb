@@ -8,10 +8,8 @@ books = [
 ]
 
 # sort_by
-
-
-sorted = books.sort_by do |book|
-  book[:published].to_i
-end
+sorted = books.sort_by do |hsh|
+    hsh[:published].to_i
+  end
 
 p sorted

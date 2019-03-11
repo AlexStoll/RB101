@@ -1,5 +1,10 @@
+
+
 def shout_out_to(name)
-  puts 'HEY ' + name.upcase
+  name.upcase!
+
+  puts 'HEY ' + name
 end
 
-shout_out_to('you') # expected: 'HEY YOU'
+p shout_out_to('you') # expected: 'HEY YOU'
+

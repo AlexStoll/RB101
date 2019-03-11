@@ -2,16 +2,24 @@
 # of 1's and 0's, starting with one, of the length of the
 # integer
 
+def stringy(num, option = 1)
+  output = ""
 
-def stringy(num)
-  numbers = []
-
-  num.times do |number|
-    result = number.even? ? 1 : 0
-    numbers << result
+  if option == 1
+    num.times do |index|
+      number = index.even? ? '1' : '0'
+      output << number
+    end
+    
+  elsif option == 0
+    num.times do |index|
+      number = index.even? ? '0' : '1'
+      output << number
+    end
   end
-
-  numbers.join   
+  output
 end
 
-p stringy(10)
+
+puts stringy(7, 1)
+puts stringy(7, 0)

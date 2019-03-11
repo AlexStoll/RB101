@@ -5,14 +5,11 @@ def palindrome?(string)
 end
 
 def real_palindrome?(string)
-  # modify to downcase, and remove non-letters
-  test_string = string.downcase.delete('^a-z0-9')
-  palindrome?(test_string)
+  # modify to downcase, and remove non-letters, then feed to palindrome?
+  clean_string = string.downcase.delete('^a-z0-9')
+  palindrome?(clean_string)
 end
-  # then compare as before
-p real_palindrome?('madam') == true
-p real_palindrome?('Madam') == true           # (case does not matter)
-p real_palindrome?("Madam, I'm Adam") == true # (only alphanumerics matter)
+
 p real_palindrome?('356653') == true
 p real_palindrome?('356a653') == true
 p real_palindrome?('123ab321') == false

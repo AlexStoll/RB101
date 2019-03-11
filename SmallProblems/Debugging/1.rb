@@ -1,14 +1,12 @@
-# This isn't working as expected
-# Why?
-# Change so it couunts from 10 to 1
+def decrease(counter)
+  counter - 1
+end
 
+counter = 10
 
-
-10.times do |i|
-  puts i
-  
+10.times do
+  puts counter
+  counter = decrease(counter)
 end
 
 puts 'LAUNCH!'
-
-puts [*10.downto(1)]

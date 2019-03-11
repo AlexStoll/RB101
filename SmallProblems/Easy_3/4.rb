@@ -4,4 +4,4 @@ def multiply(x, y)
   x * y
 end
 
-p multiply([1, 2, 5], 5)
+p multiply([2, 3, 4], 10)

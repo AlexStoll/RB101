@@ -1,0 +1,26 @@
+1. File::path is class method
+   File#path is an instance method
+
+2. require 'date'
+
+puts Date.new
+=> the first day on the weird calendar used
+
+puts Date.new(2016)
+=> 2016-01-01
+
+puts Date.new(2016, 5)
+=> 2016-05-01
+
+puts Date.new(2016, 5, 13)
+=> 2016-05-13
+
+3. 
+
+4. 
+
+5.
+
+6.
+
+7.

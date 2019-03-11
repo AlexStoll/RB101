@@ -2,16 +2,16 @@
 # returns the given string with all 5 or more letter
 # words reversed
 
-def reverse_big_words(string)
-  words = ''
-  string.split.each do |word|
-    if word.size >= 5
-      words << word.reverse + ' '
+def reverse_words(str)
+  words = str.split.map do |word|
+    if word.size > 5
+      word.reverse
     else
-      words << word + ' '
+      word
     end
   end
-  words
+  words.join(' ')
 end
 
-p reverse_big_words("a really big collection")
+p reverse_words('Professional')
+p reverse_words('Walk around the block')

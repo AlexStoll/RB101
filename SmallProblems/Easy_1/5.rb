@@ -1,7 +1,8 @@
 # method that takes a string and returns a new string
 # with the order of the words reversed
 
-def reverse_sentence(sentence)
-  sentence.split.reverse.join(' ')
+def reverse_sentence(str)
+  str.split.reverse.join(' ')
 end
-p reverse_sentence("All dogs have fleas.")
+
+puts reverse_sentence('Hello World') == 'World Hello'

@@ -2,31 +2,21 @@
 # print results of
 # addition, subtraction, product, quotient, remainder, and power
 
-# get the two numbers
-puts "Enter one positive integer."
-int1 = gets.chomp.to_i
+puts "==> Enter the first number:"
+first = gets.chomp.to_i
 
-puts "Enter another positive integer."
-int2 = gets.chomp.to_i
+second = 0
+loop do
+  puts "==> Enter the second number:"
+  second = gets.chomp.to_i
+  break if second != 0
+  puts "Second can't be a 0"
+end
 
-# perform the operations all at once
-sum = int1 + int2
-difference = int1 - int2
-product = int1 * int2
-quotient = int1 / int2
-remainder = int1 % int2
-power = int1 ** int2
+puts "==> #{first} + #{second} = #{first + second}"
+puts "==> #{first} - #{second} = #{first - second}"
+puts "==> #{first} * #{second} = #{first * second}"
+puts "==> #{first} / #{second} = #{first.to_f / second.to_f}"
+puts "==> #{first} % #{second} = #{first % second}"
+puts "==> #{first} ** #{second} = #{first ** second}"
 
-# display all results
-
-puts "#{int1} + #{int2} = #{sum}"
-
-puts "#{int1} - #{int2} = #{difference}"
-
-puts "#{int1} * #{int2} = #{product}"
-
-puts "#{int1} / #{int2} = #{quotient}"
-
-puts "#{int1} % #{int2} = #{remainder}"
-
-puts "#{int1} ** #{int2} = #{power}"

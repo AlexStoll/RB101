@@ -5,8 +5,8 @@ end
 # using this method, write a method that computes the
 # the square of its argument
 
-def square(x)
-  multiply(x, x)
+def square(num)
+  multiply(num, num)
 end
 
-p square(3)
+puts square(3)

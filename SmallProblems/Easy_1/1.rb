@@ -3,10 +3,8 @@
 # Write a method that takes two arguments, string and int
 # Prints the string as many times as the int says
 
-def repeat(string, number)
-  number.times do
-    puts string
-  end
+def repeat(str, num)
+  num.times { puts str }
 end
 
 repeat('Hello', 3)

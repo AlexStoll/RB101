@@ -1,18 +1,26 @@
 # write a method that returns an Array
 # containing every other element of the array
 
-def oddities(array)
-return_array = []
-  array.each do |x|
-    if array.index(x).even?
-      return_array << x
-    end
+def halfer(arr)
+  even_elements = []
+  index = 1
+  while index < arr.size
+    even_elements << arr[index]
+    index += 2
   end
-return_array
+  even_elements
 end
 
-p oddities([2, 3, 4, 5, 6]) == [2, 4, 6]
-p oddities([1, 2, 3, 4, 5, 6]) == [1, 3, 5]
-p oddities(['abc', 'def']) == ['abc']
-p oddities([123]) == [123]
-p oddities([]) == []
+a = [0, 1, 2, 3, 4, 5, 6]
+
+def odd_index(arr)
+  arr2 = []
+  arr.each_with_index do |num, index|
+    if index.odd?
+      arr2 << num
+    end
+  end
+  arr2
+end
+
+p odd_index(a)
