@@ -1,12 +1,10 @@
 # 21 game
 
-# To - Do List
-
 # Constants
 
 SUITS = ['c', 's', 'd', 'h']
 VALUES = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
-FACE_CARDS = ['J', 'Q', 'K']
+NON_ACE_FACES = ['J', 'Q', 'K']
 
 # Methods:
 
@@ -20,17 +18,17 @@ def initialize_deck
   # deck[1] is value
 end
 
-
 def total(hand)
   # accepts a hand, creates a new array of the values
   values = []
   hand.each { |card| values.push(card[1]) }
   # returns a number value for cards in a hand
   sum = 0
+
   values.each do |value|
     if value == "A"
       sum += 11
-    elsif FACE_CARDS.include?(value)
+    elsif NON_ACE_FACES.include?(value)
       sum += 10
     else
       sum += value
@@ -38,10 +36,9 @@ def total(hand)
   end
   # converting face card values
   # special case for Aces
-  values.select { |value| value == "A"}.count.times do
+  values.select { |value| value == "A" }.count.times do
     sum -= 10 if sum > 21
   end
-
   sum
 end
 
@@ -52,7 +49,7 @@ end
 def detect_result(dealer_hand, player_hand)
   dealer_score = total(dealer_hand)
   player_score = total(player_hand)
-  
+
   if player_score > 21
     'player busted'
   elsif dealer_score > 21
@@ -90,12 +87,9 @@ def play_again?
   answer == 'y'
 end
 
+######### Game starts here
 
-
-
-######### Game logic starts here
-
-prompt ("Welcome to Alex's 21")
+prompt "Welcome to Alex's 21"
 
 loop do
   deck = initialize_deck
@@ -107,7 +101,6 @@ loop do
     player_hand << deck.pop
     dealer_hand << deck.pop
   end
-
 
   # player's turn
   loop do
@@ -130,7 +123,7 @@ loop do
 
   # dealer hits until 17 or greater
   until total(dealer_hand) >= 17
-      dealer_hand << deck.pop
+    dealer_hand << deck.pop
   end
 
   if busted?(dealer_hand)
@@ -144,10 +137,3 @@ loop do
 
   break unless play_again?
 end
-
-
-
-
-
-
-
