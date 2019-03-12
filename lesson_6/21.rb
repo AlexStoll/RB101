@@ -26,13 +26,13 @@ def total(hand)
   sum = 0
 
   values.each do |value|
-    if value == "A"
-      sum += 11
-    elsif NON_ACE_FACES.include?(value)
-      sum += 10
-    else
-      sum += value
-    end
+    sum += if value == "A"
+             11
+           elsif NON_ACE_FACES.include?(value)
+             10
+           else
+             value
+           end
   end
   # converting face card values
   # special case for Aces
