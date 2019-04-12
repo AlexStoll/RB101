@@ -1,23 +1,17 @@
-# Multiply All Pairs
+# Multiply all pairs
 
-# multiply_all_pairs([2, 4]), [4, 3, 1, 2]) ==
-                    # [2, 4, 4, 6, 8, 8, 12, 16]
-
-# Multiply each value in the first by each in the second
-
-# Sort array in increasing value
-
-def multiply_all_pairs(arr1, arr2)
-  products = []
-  arr1.each do |x|
-    arr2.each do |y|
-      products << x * y
-    end
+def multiply_all_pairs(array_1, array_2)
+  result = []
+  array_1.each do |first|
+    array_2.each do |second|
+     result << first * second
+   end
   end
-  products.sort
+  result.sort
 end
 
-a = [1, 2]
-b = [3, 4]
+first = [2, 4]
+second = [1, 2, 3]
 
-p multiply_all_pairs(a, b)
+p multiply_all_pairs(first, second) == [2, 4, 4, 6, 8, 12]
+

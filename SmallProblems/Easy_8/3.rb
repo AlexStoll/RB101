@@ -1,18 +1,9 @@
-
-
-
 def substrings_at_start(string)
-  substrings = []
-  0.upto(string.size - 1) do |index|
-    substrings << string[0..index]
-  end
-  substrings
+  result = []
+  string.size.times {|i| result << string[0..i]}
+  result
 end
 
-p substrings_at_start('abc')
-
-
-
-# p substrings_at_start('abc') == ['a', 'ab', 'abc']
-# p substrings_at_start('a') == ['a']
-# p substrings_at_start('xyzzy') == ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
+p substrings_at_start('abc')  == ['a', 'ab', 'abc']
+p substrings_at_start('a') == ['a']
+p substrings_at_start('xyzzy') == ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']

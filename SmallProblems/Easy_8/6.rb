@@ -1,24 +1,19 @@
-# Takes two arguments, which comprise a range.
-# For each value in the range
-# If num / 3, print "Fizz"
-# If num / 5, print "Buzz"
-# If num / 3 && 5, print "FizzBuzz"
+# Print out the range between the two.
+# If divisible by 3 Fizz, if 5 Buzz, if 15 FizzBuzz
 
-def fizzbuzz(low, high)
+def fizzbuzz(num_1, num_2)
   result = []
-  range = (low..high).to_a
-  range.each do |x|
-    if x % 15 == 0
-      result << "FizzBuzz"
-    elsif x % 5 == 0
-      result << "Buzz"
-    elsif x % 3 == 0
-      result << "Fizz"
-    else
-      result << x
+  (num_1..num_2).each do |num|
+      if num % 15 == 0
+        result << 'FizzBuzz'
+      elsif num % 5 == 0
+        result << 'Buzz'
+      elsif num % 3 == 0
+        result << 'Fizz'
+      else result << num
     end
   end
   result.join(', ')
 end
 
-p fizzbuzz(1, 45)
+puts fizzbuzz(1, 15)

@@ -1,30 +1,22 @@
-# get six numbers from the user
+puts "Enter a list of five numbers, then a sixth which will be checked against the list."
+list = []
 
-# print a message describing whether the 6th is one of the
-# first 5
+puts "1st"
+list << gets.chomp.to_i
 
-nums = []
+puts "2nd"
+list << gets.chomp.to_i
 
-puts "Enter the 1st number:"
-nums << gets.chomp.to_i
+puts "3rd"
+list << gets.chomp.to_i
 
-puts "Enter the 2nd number:"
-nums << gets.chomp.to_i
+puts "4th"
+list << gets.chomp.to_i
 
-puts "Enter the 3rd number:"
-nums << gets.chomp.to_i
+puts "5th"
+list << gets.chomp.to_i
 
-puts "Enter the 4th number:"
-nums << gets.chomp.to_i
+puts "6th"
+last = gets.chomp.to_i
 
-puts "Enter the 5th number:"
-nums << gets.chomp.to_i
-
-puts "Enter the 6th number:"
-a = gets.chomp.to_i
-
-if nums.include?(a)
-  puts "The number #{a} appears in #{nums}"
-else
-  puts "The number #{a} does not appear in #{nums}"
-end
+list.include?(last) ? (puts "#{last} apprears in #{list}.") : (puts "#{last} does not appear in #{list}")

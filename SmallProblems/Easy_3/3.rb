@@ -1,9 +1,8 @@
-# ask user for an input of a string
-# give the user the number of characters, not counting
-# spaces
+# Ask user for a string and return the number of characters, excluding spaces.
 
-puts "Please write a word or multiple words:"
-input = gets.chomp
-number_of_chars = input.delete(' ').size
+print "Please write a word or multiple words: "
+string = gets.chomp
 
-puts "There are #{number_of_chars} characters in \"#{input}\"."
+number_of_letters = string.gsub(' ', '').size
+
+puts "There are #{number_of_letters} letters in '#{string}'."

@@ -1,17 +1,17 @@
-# array contains elements which will comprise a name
-# hash is {title: 'Senior', occupation: 'Vice President'}
+# Takes array and hash
+# array contains 2+ elements making a name
+# hash contains :title and :occupation keys
+# greet person with title
 
+person = ['Alfred', 'P', 'Sloan']
+job = {title: 'swell', occupation: 'guy'}
 
-def greetings(arr, hsh)
-  name = ""
-  arr.each do |x|
-    name << x + ' '
-  end
-  name.chop!
+def greetings(name_array, title_hash)
+  name_str = name_array.join(' ')
+  title_str = "#{title_hash[:title]} #{title_hash[:occupation]}"
 
-  "Hello, #{name}! I've never met a #{hsh[:title]} #{hsh[:occupation]} before!"
+  "Hey there #{name_str}, you're a #{title_str}?"
 end
 
 
-
-p greetings(['Alex', 'M', 'Stoll'], {title: 'Senior', occupation: 'Interloper'})
+p greetings(person, job)

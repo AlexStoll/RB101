@@ -1,18 +1,11 @@
-# ask the user for the l x w of a room in meters
-# display the area of that room in square meters
-# display the area of that room in sqare feet
+SQ_METERS_TO_SQ_FEET = 10.7639
 
-# 1 square meter == 10.7639 square feet
-SQMETERS_TO_SQFEET = 10.7639
-# Ask the user for length and width in meters
-puts "Enter the length of the room in meters:"
-length = gets.chomp.to_f
+puts "Enter the length in m's:"
+length = gets.chomp.to_i
+puts "Enter the width in m's:"
+width = gets.chomp.to_i
 
-puts "Enter the width of the room in meters:"
-width = gets.chomp.to_f
-# multiply those for area_square_meters
-area_square_meters = (length * width).round(2)
-# multiply that result by the given value for area_square_feet
-area_square_feet = (area_square_meters * SQMETERS_TO_SQFEET).round(2)
-# present the user with the results
-puts "The area of the room is #{area_square_meters} square meters (#{area_square_feet} square feet)."
+area_sq_meters = (length * width).round(2)
+area_sq_feet = (area_sq_meters * SQ_METERS_TO_SQ_FEET).round(2)
+
+puts "The area of the room is #{format("%.2f", area_sq_meters)} square meters #{format("%.2f", area_sq_feet)} square feet)."

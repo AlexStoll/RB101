@@ -1,19 +1,13 @@
 def substrings_at_start(string)
-  substrings = []
-  0.upto(string.size - 1) do |index|
-    substrings << string[0..index]
-  end
-  substrings
+  result = []
+  string.size.times { |i| result << string[0..i]}
+  result
 end
 
-def substrings(string)
-count = 0
-output = []
-  string.size.times do |_|
-    output << substrings_at_start(string[count..string.size])
-    count += 1
-  end
-  output.flatten
+def substrings(str)
+  result = []
+  str.size.times { |i| result << substrings_at_start(str[i..-1])}
+  result.flatten
 end
 
 p substrings('abcde') == [

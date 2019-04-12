@@ -1,18 +1,34 @@
-# Given the hash of :contries => capital cities
+# Staggered Caps 1
 
-# Return new hash of key/values where country starts with 'B'
+# Problem
+# Takes a string, returns new string with a staggered
+# capitalization scheme LiKe tHiS
+# spaces count for stagerring, so same case either side of a space
 
-countries_and_capitals = {
-  'France' => 'Paris',
-  'Belgium' => 'Brussels',
-  'Morocco' => 'Rabat',
-  'Barbados' => 'Bridgetown',
-  'Peru' => 'Lima',
-  'Bolivia' => 'La Paz',
-  'Brazil' => 'Brasilia'
-}
+# Example
+# staggered_case('I Love Launch School!') == 'I LoVe lAuNcH ScHoOl!'
 
-p countries_and_capitals.each_with_object({}) do |(k, v), obj|
-  obj[k] = v if k.chr == 'B'
+# Data
+# String into an array, back to a string
+
+# Algorithm
+# Split string into chars. each_with_index to Upcase at even indeces, downcase at odds
+
+# Code
+def staggered_case(string, first = 'uppercase')
+  result = string.chars
+  result.each_with_index do |char, index|
+      if first == 'uppercase'
+      index.even? ? char.upcase! : char.downcase!
+      else
+      index.odd? ? char.upcase! : char.downcase!
+    end
+  end
+  result.join
 end
+
+p staggered_case('I Love Launch School!')
+p staggered_case('I love Launch School!', []) # == 'I LoVe lAuNcH ScHoOl!'
+p staggered_case('ALL_CAPS') == 'AlL_CaPs'
+p staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 NuMbErS'
 

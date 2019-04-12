@@ -1,9 +1,5 @@
-# returns true if the integer is a palindrome
-
-# convert to string, reverse that, then back to an integer
-
-def palindromic_number?(integer)
-  integer.to_s.reverse.to_i == integer
+def palindromic_number?(num)
+  num.to_s == num.to_s.reverse
 end
 
 p palindromic_number?(34543) == true

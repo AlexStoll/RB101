@@ -1,8 +1,9 @@
-# method that takes a string and returns a new string
-# with the order of the words reversed
+# Reverse the words in a string
 
-def reverse_sentence(str)
-  str.split.reverse.join(' ')
+def reverse_sentence(string)
+  string.split.reverse.join(' ')
 end
 
+puts reverse_sentence('') == ''
 puts reverse_sentence('Hello World') == 'World Hello'
+puts reverse_sentence('Reverse these words') == 'words these Reverse'

@@ -1,18 +1,11 @@
-# tip calulator
-
-# prompt for bill amount
-puts "What's the bill?"
+print "What's the bill? "
 bill = gets.chomp.to_f
 
-puts "What's the tip percentage (as a whole number)?"
-tip_rate = (gets.chomp.to_f)/100
-# prompt for tip rate
+print "What's the tip percentage? "
+percentage = gets.chomp.to_f
 
-# compute the tip, display the tip and the full total
-tip = (bill * tip_rate).round(2)
+tip = bill * (percentage / 100)
+total = format("%.2f", (bill + tip))
 
-total = (tip + bill).round(2)
-
-puts "The tip is $#{tip}"
-
+puts "The tip is $#{format("%.2f", tip)}"
 puts "The total is $#{total}"

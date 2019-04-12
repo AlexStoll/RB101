@@ -1,19 +1,18 @@
-def get_grade(x, y, z)
-  score = (x + y + z)/3
-  if score < 60
-    "F"
-  elsif score < 70
-    "D"
-  elsif score < 80
-    "C"
-  elsif score < 90
-    "B"
-  elsif score < 100
-    "A"
-  elsif score > 100
-    "A+"
+# determine average of three scores
+# return letter grade
+
+def get_grade(num_1, num_2, num_3)
+  score = (num_1 + num_2 + num_3) / 3.0
+  
+  case score
+  when 100.. then   'A+'
+  when 90..100 then 'A'
+  when 90..89 then  'B'
+  when 70..79 then  'C'
+  when 60..69 then  'D'
+  else              'F'
   end
 end
 
-p get_grade(90, 95, 140)
-p get_grade(80, 10, 2)
+p get_grade(95, 90, 200)
+p get_grade(50, 50, 95)

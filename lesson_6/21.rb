@@ -1,10 +1,21 @@
-# 21 game
+require "Pry"
+
+# To Do
+# use a player_total var. to avoid using total(hand) so much
+# Implement a scoreboard and play to five rounds
+
+
+# WhateverOne game
+# Free to change DEALER_MAX (default 17)
+# and BLACKJACK (default 21) to any value
 
 # Constants
 
 SUITS = ['c', 's', 'd', 'h']
 VALUES = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
 NON_ACE_FACES = ['J', 'Q', 'K']
+DEALER_MAX = 17
+BLACKJACK = 21
 
 # Methods:
 
@@ -37,22 +48,22 @@ def total(hand)
   # converting face card values
   # special case for Aces
   values.select { |value| value == "A" }.count.times do
-    sum -= 10 if sum > 21
+    sum -= 10 if sum > BLACKJACK
   end
   sum
 end
 
 def busted?(hand)
-  total(hand) > 21
+  total(hand) > BLACKJACK
 end
 
 def detect_result(dealer_hand, player_hand)
   dealer_score = total(dealer_hand)
   player_score = total(player_hand)
 
-  if player_score > 21
+  if player_score > BLACKJACK
     'player busted'
-  elsif dealer_score > 21
+  elsif dealer_score > BLACKJACK
     'dealer busted'
   elsif dealer_score > player_score
     'dealer'
@@ -120,9 +131,9 @@ loop do
   if busted?(player_hand)
     display_result(dealer_hand, player_hand)
   end
-
+  binding.pry
   # dealer hits until 17 or greater
-  until total(dealer_hand) >= 17
+  until total(dealer_hand) >= DEALER_MAX
     dealer_hand << deck.pop
   end
 

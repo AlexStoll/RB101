@@ -1,19 +1,27 @@
-# Write a method that takes an Array as an argument
-# reverses it elements in place, modifying the original array
-# can't use reverse
+# Swap Case
 
-# list = [1, 2, 3, 4]
-# result = reverse!(list)
-# list == [4, 3, 2, 1]
-# list.object_id == result.object_id
+# Problem
+# Swap the case of each letter in a string
 
-def reverse!(array)
-  left_index = 0
-  right_index = -1
+# Example
+# swapcase('CamelCase') == 'cAMELcASE'
 
-  while left_index < array.size / 2
-    array[left_index], array[right_index]= array[right_index], array[left_index]
-    left_index += 1
-    right_index -= 1
+# Data
+# String split to a chars array, joined back to a string
+
+# Algorithm
+# Split into chars
+# Map through chars, if upcase => downcase, if downcase => upcase
+# join chars back to a string
+
+# Code
+
+def swapcase(string)
+  output = string.chars.map do |char| 
+    char == char.upcase ? char.downcase : char.upcase
   end
+  output.join
 end
+
+p swapcase('CamelCase')
+p swapcase('CamelCase') == 'cAMELcASE'

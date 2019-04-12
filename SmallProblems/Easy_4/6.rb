@@ -1,15 +1,11 @@
-# method running_total
-# takes array of numbers
-# returns an array with same number of elements,
-# each element being a running total from the origingal
+# Take an array of numbers, return an array with the running total
 
-# running_total([1, 2, 3]) == [1, 3, 6]
-
-# Just use sum as the running count.
-
-def running_total(array)
+def running_total(arr)
   sum = 0
-  array.map { |value| sum += value}
+  arr.map {|x| sum += x}
 end
 
-p running_total([1, 2, 3])
+p running_total([2, 5, 13]) == [2, 7, 20]
+p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]
+p running_total([3]) == [3]
+p running_total([]) == []

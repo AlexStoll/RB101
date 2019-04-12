@@ -1,18 +1,9 @@
-# method that takes two strings
-# determines the longest of the two
-# returns ShortLongShort
+# Takes two strings, determines the longest
+# prints "ShortLongShort"
 
-def short_long_short(string1, string2)
-  if string1.length > string2.length
-    "#{string2}#{string1}#{string2}"
-  else
-    "#{string1}#{string2}#{string1}"
-  end
+def short_long_short(str1, str2)
+  str1.size < str2.size ? (str1 + str2 + str1) : (str2 + str1 + str2)
 end
-
-
-
-
 
 p short_long_short('abc', 'defgh') == "abcdefghabc"
 p short_long_short('abcde', 'fgh') == "fghabcdefgh"

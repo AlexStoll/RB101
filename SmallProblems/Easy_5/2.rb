@@ -1,32 +1,19 @@
-# Problem
+# Minutes after midnight
+# Take a number (number of minutes after or before midnight)
+# Return in 24 hour hh:mm format
 
-# Take an integer, representing the number of minutes
-# before or after midnight, and convert to 24:60 time
-
-# Example
-
-# time_of_day(0) == '00:00'
-# time_of_day(3000) == '02:00'
-# time_of_day(-4231) == '01:29'
-
-
-# Data Structures
-
-# Integer as an input, string 'HH:MM' as the output
-
-# Algorithm
-
-# Input divided by 60, this gives hours, remainder is minutes
-# Display as '#{hours}:#{minutes}'
-# Figure out negatives later
-
-# Code 'er up
-
-def time_of_day(input)
-  input = input % 1440
-  hours = input.to_i / 60
-  minutes = input.to_i % 60
-  format('%02d:%02d', hours, minutes)
+def time_of_day(minutes)
+  minutes = minutes % 1440
+  hour, minute = minutes.divmod(60)
+  "#{format("%.2d", hour)}:#{format("%.2d", minute)}"
 end
 
-p time_of_day(-1437)
+p time_of_day(0) == "00:00"
+p time_of_day(-3) == "23:57"
+p time_of_day(35) == "00:35"
+p time_of_day(-1437) == "00:03"
+p time_of_day(3000) == "02:00"
+p time_of_day(800) == "13:20"
+p time_of_day(-4231) == "01:29"
+
+

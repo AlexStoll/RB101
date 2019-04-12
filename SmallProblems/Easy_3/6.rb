@@ -1,12 +1,11 @@
-# write a method xor
-# returns true if only one of the two arguments is truthy
+# Exclusive Or
+# Write a method named 'xor' that takes two args
+# returns true if exactly one argument is truthy, false otherwise
 
-def xor?(boo1, boo2)
-  (boo1 && !boo2) || (boo2 && !boo1)
+def xor(arg1, arg2)
+  (arg1 && !arg2) || (!arg1 && arg2)
 end
 
-
-p xor?(5.even?, 4.even?) == true
-p xor?(5.odd?, 4.odd?) == true
-p xor?(5.odd?, 4.even?) == false
-p xor?(5.even?, 4.odd?) == false
+p xor(true, false)
+p xor(true, true)
+p xor(false, false)

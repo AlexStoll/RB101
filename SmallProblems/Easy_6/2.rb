@@ -1,26 +1,31 @@
+# Lettercase Counter
+
 # Problem
+# Take a string, return a hash with 3 entries:
+# number of lowercase chars
+# number of uppercase chars
+# number of other chars
 
-# Write a method that takes an array of strings
-# returning an array, which is the same except without
-# the vowels
-
-# Examples
-
-# remove_vowels(%w(abcdefghijklmnopqrstuvwxyz)) == %w(bcdfghjklmnpqrstvwxyz)
-# remove_vowels(%w(AEIOU)) == ['']
+# Example
+# letter_case_count('abCdef 123') == { lowercase: 5, uppercase: 1, neither: 4 }
 
 # Data
-
-# an array of strings
+# A string, a hash
 
 # Algorithm
-
-# iterate over the array, either selecting non-vowels or deleting vowels
+# Count lowercase, count uppercase, string.size - (upper + lower)
 
 # Code
 
-def remove_vowels(strings)
-  strings.map { |string| string.delete('aeiouAEIOU')}
+def letter_case_count(string)
+  result = { lowercase: 0, uppercase: 0, neither: 0 }
+  result[:uppercase] = string.count('A-Z') 
+  result[:lowercase] = string.count('a-z') 
+  result[:neither]   = string.count('^A-Za-z')
+  
+  result
 end
 
-p remove_vowels(%w(ab cd fg))
+p letter_case_count('dgO  ...Ob')
+
+

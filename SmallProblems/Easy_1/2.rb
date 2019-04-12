@@ -1,14 +1,7 @@
-# Write a method that takes one integer argument
-# is_odd?(integer)
+# Write a method that takes an integer and returns
+# whether it's odd as a boolean
 
-# Returns true if absolute value is odd.
-# Don't need to verify input.
-
-def is_odd?(num)
-  num % 2 == 1
+def is_odd?(number)
+  number % 2 != 0
 end
-
-p is_odd?(-17)
-p is_odd?(7)
-p is_odd?(-8)
-p is_odd?(0)
+p is_odd?(5)

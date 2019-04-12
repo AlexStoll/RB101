@@ -1,24 +1,13 @@
-# Problem
+# aphabetizing numbers (1..19) by their alphabetical names
+# We'll convert each number to its word name
+digits = (0..19).to_a
+NAMES = %w(zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen)
 
-# Modify word_sizes to exclude non-letters
-
-# Example
-
-# word_sizes("What's up doc?") == { 5 => 1, 2 => 1, 3 => 1 }
-
-# Data
-
-# Algorithm
-
-# Code
-
-def word_sizes(string)
-  result = Hash.new(0)
-  string.split.each do |word|
-    new_word = word.delete('^A-Za-z')
-    result[new_word.size] += 1
-  end
-  result
+def alphabetic_number_sort(numbers)
+  numbers.sort_by { |number| NAMES[number]}
 end
 
-p word_sizes("That's not a gr8 way!")
+p alphabetic_number_sort((0..19).to_a) == [
+  8, 18, 11, 15, 5, 4, 14, 9, 19, 1, 7, 17,
+  6, 16, 10, 13, 3, 12, 2, 0
+]

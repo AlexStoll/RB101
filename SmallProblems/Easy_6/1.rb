@@ -1,61 +1,36 @@
 # Problem
 
-# Take float (0.0...360.0)
-# Covert to an angle in degrees, minutes, seconds
-# Use ° to represent degrees, ' for minutes, " for seconds
-# A degree has 60 minutes a minute 60 seconds
-
-# Examples
-
-# dms(30) == %(30°00'00")
-# dms(76.73) == %(76°43'48")
-# dms(254.6) == %(254°36'00")
+# Interleave two arrays of the same size
+# interleave([1, 2, 3]['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']
 
 # Data
-
-# Input as a float or integer
-
-# Output is a concatenated string of the degrees,
-# minutes, and seconds, integers
+# Two arrays in, one array out
 
 # Algorithm
-
-# degrees = angle.to_i
-# => if angle = 360, degrees = 0
-
-# minutes = ((angle % 1) * 60).to_i
-
-# seconds = ((((angle % 1)) * 60) % 1).to_i 
-
+# iterate through both with a loop and counter
+# to add array_1[count], array_2[count]
 
 # Code
-=begin
 
+def interleave(array_1, array_2)
+  result = []
+  index = 0
 
-def dms(angle)
-  degrees = angle.to_i
-  minutes = ((angle % 1) * 60).to_i
-  seconds = ((((angle % 1)) * 60) % 1).to_i
-
-  "#{degrees} #{minutes} #{seconds}"
-end 
-
-p dms(30)
-p dms(254.6)
-=end
-
-DEGREE = "\xC2\xB0" # this is just the ° character
-
-def dms(angle)
-  total_seconds = (angle * 360).round
-  degrees, remaining_seconds = total_seconds.divmod(360)
-  minutes, seconds = remaining_seconds.divmod(60)
-  format(%(#{degrees}#{DEGREE}%02d'%02d"), minutes, seconds)
+  until index == array_1.size do 
+    result << array_1[index] << array_2[index]
+    index += 1
+  end
+  result
 end
 
-puts dms(240)
-puts dms(240.45)
-puts dms(450)
+def interzip(array_1, array_2)
+  array_1.zip(array_2).flatten
+end
 
 
+a = [1, 2, 3]
+b = ['a', 'b', 'c']
 
+p interzip(a, b)
+
+p interleave([1, 2, 3], ['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']

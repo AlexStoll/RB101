@@ -1,14 +1,12 @@
+#character * 2 unless - vowel, digit, whitespace, punctuation
+
 def double_consonants(string)
-  output = ""
-  consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-  string.chars.each do |char|
-    if consonants.include?(char.downcase)
-      output << char * 2
-    else
-      output << char
+  string.chars.map do |x|
+    if (x =~ /[a-z]/i) && (x =~ /[^aeiou]/i)
+      x * 2
+    else x
     end
-  end
-  output
+  end.join
 end
 
 p double_consonants('String') == "SSttrrinngg"

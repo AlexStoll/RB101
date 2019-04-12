@@ -1,10 +1,8 @@
-# Repeat yourself
+# repeat('Hello', 3)
+# => Hello /n Hello /n Hello /n
 
-# Write a method that takes two arguments, string and int
-# Prints the string as many times as the int says
-
-def repeat(str, num)
-  num.times { puts str }
+def repeat(string, number)
+  number.times {puts string}
 end
 
-repeat('Hello', 3)
+repeat('A', 3)

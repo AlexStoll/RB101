@@ -1,16 +1,14 @@
-  # true if all letters are upcase
-  # false otherwise
-  # ignore non-letters
+# Takes a string, returns ture if all upcase
+# false otherwise
 
-def uppercase?(str)
-  return false if str == ""
-  
-  str.upcase == str
-end 
+def uppercase?(string)
+  return false if string.size == 0
+  string.upcase == string
+end
 
 p uppercase?('t') == false
 p uppercase?('T') == true
 p uppercase?('Four Score') == false
 p uppercase?('FOUR SCORE') == true
 p uppercase?('4SCORE!') == true
-p uppercase?('') == false
+p uppercase?('') == true

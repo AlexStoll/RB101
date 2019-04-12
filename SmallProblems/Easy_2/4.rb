@@ -1,16 +1,12 @@
-current_year = Time.new.year
+print "What is your age? "
+current_age = gets.chomp.to_i
 
-
-# get users age
-puts "What is your age?"
-age = gets.chomp.to_i
-
-# get retirement age
-puts "At what age can you retire?"
+print "When could you retire? "
 retirement_age = gets.chomp.to_i
 
-career_length = (retirement_age - age)
-retirement_year = (career_length + current_year)
+year = Time.now.year
+work_years = retirement_age - current_age
+retirement_year = year.to_i + work_years
 
-puts "It's #{current_year}. You will retire in #{retirement_year}."
-puts "Only #{career_length} years to go!"
+puts "It's #{year}, you're planning to retire in #{retirement_year}."
+puts "You have #{work_years} years of work to do until then, so enjoy them!"

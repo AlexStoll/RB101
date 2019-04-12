@@ -1,27 +1,21 @@
-# Write a method that counts the occurences of each element in an array
+# Count occurences of a given element in an array
 
-# Print each element alongside the number of occurences
+# Iterate through the array
+# Check if the word is in the results hash
+# If it isn't: add the word to the hash
+# If it is: add one to the words value
+
+def count_occurences(words)
+  results = {}
+  words.each do |word|
+    results.include?(word) ? results[word] += 1 : results[word] = 1
+  end
+  results
+end
 
 vehicles = [
   'car', 'car', 'truck', 'car', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
-def display_item_and_count(hsh)
-  hsh.each do |item, count|
-    puts "#{item} => #{count}"
-  end
-end
-
-def count_occurrences(arr)
-  counts = {}
-
-  arr.each do |item|
-    counts[item] = arr.count(item)
-  end
-  
-  display_item_and_count(counts)
-end
-
-
-count_occurrences(vehicles)
+p count_occurences(vehicles)

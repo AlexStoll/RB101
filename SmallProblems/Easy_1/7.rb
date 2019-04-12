@@ -1,25 +1,13 @@
-# takes a positive integer, and returns a string
-# of 1's and 0's, starting with one, of the length of the
-# integer
+# Take a positive integer
+# return a string of 1s and 0s the length of the string
 
-def stringy(num, option = 1)
-  output = ""
-
-  if option == 1
-    num.times do |index|
-      number = index.even? ? '1' : '0'
-      output << number
-    end
-    
-  elsif option == 0
-    num.times do |index|
-      number = index.even? ? '0' : '1'
-      output << number
-    end
-  end
-  output
+def stringy(number)
+  result = ''
+  number.times {|i| i.even? ? result << '1' : result << '0'}
+  result
 end
 
-
-puts stringy(7, 1)
-puts stringy(7, 0)
+puts stringy(6) == '101010'
+puts stringy(9) == '101010101'
+puts stringy(4) == '1010'
+puts stringy(7) == '1010101'

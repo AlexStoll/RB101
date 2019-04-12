@@ -1,16 +1,10 @@
-# searches for multiples of 3 and 5 between 1 and input
-# then finds sum of all those numbers
-# use range (1..input)
-
+# find multiples of 3 or 5 between 1 and num
+# compute the sum of those multiples
 
 def multisum(num)
-  result = 0
-  for i in (1..num)
-    if i % 3 == 0 || i % 5 == 0
-      result += i
-    end
-  end
-  result
+  (1..num).to_a
+          .select {|x| (x % 3 == 0) || (x % 5 == 0)}
+          .inject(:+)
 end
 
 p multisum(3) == 3
