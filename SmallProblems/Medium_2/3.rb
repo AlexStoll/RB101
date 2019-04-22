@@ -1,18 +1,17 @@
-
-
-
 def letter_percentages(string)
-  percentage_hash = {}
+  percents = {lowercase: 0, uppercase: 0, neither: 0}
+  length = string.length.to_f
+  lowercase, uppercase = string.count('a-z'), string.count('A-Z')
+  percents[:lowercase] = (lowercase / length) * 100
+  percents[:uppercase] = (uppercase / length) * 100
+  percents[:neither] = 100 - (percents[:lowercase] + percents[:uppercase])
 
-  uppercase, lowercase = string.count("A-Z").to_f, string.count("a-z").to_f
-  
-  percentage_hash[:lowercase] = ((lowercase / string.size) * 100).round(1)
-  percentage_hash[:uppercase] = ((uppercase / string.size) * 100).round(1)
-  percentage_hash[:neither] = 100 - (percentage_hash[:lowercase] + percentage_hash[:uppercase])
-  
-  percentage_hash
+
+  p percents
 end
 
-p letter_percentages('abCdef 123')
-p letter_percentages('AbCd +Ef')
-p letter_percentages('123')
+
+
+p letter_percentages('abCdef 123') == { lowercase: 50, uppercase: 10, neither: 40 }
+p letter_percentages('AbCd +Ef') == { lowercase: 37.5, uppercase: 37.5, neither: 25 }
+p letter_percentages('123') == { lowercase: 0, uppercase: 0, neither: 100 }

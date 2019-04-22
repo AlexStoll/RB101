@@ -1,12 +1,16 @@
+# Find longest sentence by number of words
+# Return longest sentence and its word count
 
-text = File.read('sample_text.txt')
-sentences = text.split(/\.|\?|!/)
-largest_sentence = sentences.max_by { |sentence| sentence.split.size}
-largest_sentence = largest_sentence.strip
-number_of_words = largest_sentence.split.size
-words = text.split(/\-|\.|\?|!|\s/)
-largest_word = words.max_by { |word| word.size}
 
-puts "'#{largest_word}'' is the largest word."
-puts "#{largest_sentence}"
-puts "#{number_of_words} words"
+text = File.read('frankenstein.txt')
+
+sentences = text.split(/[!?.]/).each {|sent| sent[0] = '' if sent[0] == ' '}
+longest_sentence = ''
+most_words = 0
+sentences.each do |sent|
+  word_count = sent.split(' ').size
+  longest_sentence = sent if word_count > most_words
+  most_words = word_count if word_count > most_words
+end
+
+puts "The longest sentence is: '#{longest_sentence}.'. It has #{most_words} words."
